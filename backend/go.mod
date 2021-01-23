@@ -1,3 +1,8 @@
-module github.com/TutorialEdge/realtime-chat-go-react
+module github.com/timothysugar/chess
 
-require github.com/gorilla/websocket v1.4.0
+go 1.15
+
+require (
+	github.com/gorilla/websocket v1.4.0
+	github.com/notnil/chess v1.2.0
+)

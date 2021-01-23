@@ -10,12 +10,15 @@ type Pool struct {
 }
 
 func NewPool() *Pool {
-	return &Pool{
+	pool := &Pool{
 		Register:   make(chan *Client),
 		Unregister: make(chan *Client),
 		Clients:    make(map[*Client]bool),
 		Broadcast:  make(chan Message),
 	}
+
+	go pool.Start()
+	return pool
 }
 
 func (pool *Pool) Start() {
